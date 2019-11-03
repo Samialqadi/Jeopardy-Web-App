@@ -18,6 +18,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { QuestionCardComponent } from './question-card/question-card.component'
 import { RouterService } from './router/router.service';
 import { MatGridListModule } from '@angular/material/grid-list'
+import { MatCardModule } from '@angular/material/card'
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { MatGridListModule } from '@angular/material/grid-list'
     MatSelectModule,
     MatButtonModule,
     RouterService,
-    MatGridListModule
+    MatGridListModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

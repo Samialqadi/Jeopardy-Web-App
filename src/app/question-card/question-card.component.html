@@ -1,22 +1,27 @@
-<mat-grid-list cols="4" rowHeight="100px">
-    <mat-grid-tile 
-        [colspan]="3"
-        [rowspan]="2"
-        [style.background]="blue">
-        {{ questionText }}
-    </mat-grid-tile>
-    <mat-grid-tile
-        [colspan]="1"
-        [rowspan]="1"
-        [style.background]="blue">
-        {{ 'Category: ' + category }}
-        {{ 'Airdate: ' + airdate}}
-        {{ 'Answer: ' + answer}}
-    </mat-grid-tile>
-    <mat-grid-tile
-        [colspan]="1"
-        [rowspan]="1"
-        [style.background]="blue">
-        {{ '$' + difficultyValue }}
-    </mat-grid-tile>
-</mat-grid-list>
+<mat-card class="main-div">
+    <mat-grid-list cols="4" rowHeight="100px" class="background">
+        <mat-grid-tile 
+            [colspan]="3"
+            [rowspan]="2">
+            <div class="question">
+                {{ questionText }}
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile
+            [colspan]="1"
+            [rowspan]="1">
+            <div class="question">
+                {{ 'Category: ' + category }}
+                {{ 'Airdate: ' + airdate }}
+                {{ 'Answer: ' + answer }}
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile
+            [colspan]="1"
+            [rowspan]="1">
+            <div class="difficulty">
+                {{ '$' + difficultyValue }}
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</mat-card>
