@@ -14,11 +14,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker'
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select'
+import { MatButtonModule } from '@angular/material/button';
+import { QuestionCardComponent } from './question-card/question-card.component'
+import { RouterService } from './router/router.service';
+import { MatGridListModule } from '@angular/material/grid-list'
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    QuestionCardComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +37,10 @@ import { MatSelectModule } from '@angular/material/select'
     HttpClientModule,
     MatInputModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    MatButtonModule,
+    RouterService,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

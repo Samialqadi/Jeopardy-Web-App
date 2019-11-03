@@ -1,7 +1,7 @@
 <div>
     <mat-form-field class="example-full-width">
         <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="searControl"
-            [matAutocomplete]="auto">
+            [matAutocomplete]="auto" [(ngModel)]="chosenCategory">
         <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
             <mat-option *ngFor="let option of options" [value]="option">
                 {{option.title}}
@@ -11,7 +11,7 @@
 
     <mat-form-field>
         <mat-label>For how much?</mat-label>
-        <mat-select>
+        <mat-select [(ngModel)]="difficultyValue">
             <mat-option *ngFor="let difficulty of difficulties" [value]="difficulty">
             {{difficulty}}
             </mat-option>
@@ -19,8 +19,16 @@
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-            <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
+            <input matInput [matDatepicker]="min_picker" placeholder="Choose a min date" [(ngModel)]="minDate">
+            <mat-datepicker-toggle matSuffix [for]="min_picker"></mat-datepicker-toggle>
+            <mat-datepicker #min_picker></mat-datepicker>
     </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+            <input matInput [matDatepicker]="max_picker" placeholder="Choose a max date" [(ngModel)]="maxDate">
+            <mat-datepicker-toggle matSuffix [for]="max_picker"></mat-datepicker-toggle>
+            <mat-datepicker #max_picker></mat-datepicker>
+    </mat-form-field>
+
+    <button mat-button (click)="onSubmit()">Click the fuckkkk out of me</button>
 </div>
