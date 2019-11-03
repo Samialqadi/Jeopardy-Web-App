@@ -19,6 +19,7 @@ import { QuestionCardComponent } from './question-card/question-card.component'
 import { RouterService } from './router/router.service';
 import { MatGridListModule } from '@angular/material/grid-list'
 import { MatCardModule } from '@angular/material/card'
+import { MatDividerModule } from '@angular/material/divider'
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { MatCardModule } from '@angular/material/card'
     MatButtonModule,
     RouterService,
     MatGridListModule,
-    MatCardModule
+    MatCardModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

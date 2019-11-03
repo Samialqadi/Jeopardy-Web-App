@@ -16,9 +16,44 @@ export class ClientService {
   }
 
   getQuestion(value: number, category: number, min_date: string, max_date: string, offset: number) {
-    return this.http.get<Question[]>(this.configUrl +
-      '/api/clues?offset=' + offset + '&value=' + value +
-                      '&min_date=' + min_date + '&max_date=' + max_date + 
-                      '&category=' + category);
+    let apiString = this.configUrl + '/api/clues';
+    let firstAdd = true;
+    if (offset) {
+      if (firstAdd) {
+        apiString += '?offset=' + offset;
+        firstAdd = false;
+      }
+      else apiString += '&offset=' + offset
+    } 
+    if (value) {
+      if (firstAdd) {
+        apiString += '?value=' + value;
+        firstAdd = false;
+      }
+      else apiString += '&value=' + value
+    } 
+    if (min_date) {
+      if (firstAdd) {
+        apiString += '?min_date=' + min_date;
+        firstAdd = false;
+      }
+      else apiString += '&min_date=' + min_date
+    } 
+    if (max_date) {
+      if (firstAdd) {
+        apiString += '?max_date=' + max_date;
+        firstAdd = false;
+      }
+      else apiString += '&max_date=' + max_date
+    }
+    if (category != 0) {
+      if (firstAdd) {
+        apiString += '?category=' + category;
+        firstAdd = false;
+      }
+      else apiString += '&category=' + category
+    } 
+
+    return this.http.get<Question[]>(apiString);
   }
 }

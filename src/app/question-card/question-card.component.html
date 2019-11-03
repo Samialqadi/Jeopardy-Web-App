@@ -2,26 +2,32 @@
     <mat-grid-list cols="4" rowHeight="100px" class="background">
         <mat-grid-tile 
             [colspan]="3"
-            [rowspan]="2">
-            <div class="question">
-                {{ questionText }}
+            [rowspan]="2"
+            style="border-bottom: 2px solid white;">
+            <div class="question" *ngIf='currentQuestion !== undefined'>
+                {{ currentQuestion.question }}
             </div>
         </mat-grid-tile>
         <mat-grid-tile
             [colspan]="1"
-            [rowspan]="1">
-            <div class="question">
-                {{ 'Category: ' + category }}
-                {{ 'Airdate: ' + airdate }}
-                {{ 'Answer: ' + answer }}
+            [rowspan]="1"
+            style="border-left: 2px solid white;border-bottom: 2px solid white;">
+            <div class="question" *ngIf='currentQuestion !== undefined'>
+                {{ 'Category: ' + currentQuestion.category.title }}
+                {{ 'Airdate: ' + currentQuestion.airdate.toString() }}
+                {{ 'Answer: ' + currentQuestion.answer }}
             </div>
         </mat-grid-tile>
         <mat-grid-tile
             [colspan]="1"
-            [rowspan]="1">
-            <div class="difficulty">
-                {{ '$' + difficultyValue }}
+            [rowspan]="1"
+            style="border-left: 2px solid white;border-bottom: 2px solid white;">
+            <div class="difficulty" *ngIf='currentQuestion !== undefined'>
+                {{ '$' + currentQuestion.value }}
             </div>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="4" [rowspan]='1'>
+            <button (click)="onNext()" mat-raised-button color="primary">Next Question</button>
         </mat-grid-tile>
     </mat-grid-list>
 </mat-card>

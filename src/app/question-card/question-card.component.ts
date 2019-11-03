@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../api-client/client.service';
 import { ActivatedRoute } from '@angular/router';
+import { Question } from '../question/question';
 
 @Component({
   selector: 'app-question-card',
@@ -10,6 +11,10 @@ import { ActivatedRoute } from '@angular/router';
 export class QuestionCardComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private clientService:ClientService) { }
+
+  currentQuestion:Question;
+  questionArr:Question[];
+  questionIdx = 0;
 
   questionText:string;
   category:string;
@@ -25,15 +30,16 @@ export class QuestionCardComponent implements OnInit {
       map.get('min_date'), map.get('max_date'), 0)
       .subscribe(questions => {
         console.log(questions);
-        questions.forEach(question => {
-          this.questionText = question.question;
-          this.difficultyValue = question.value;
-          this.category = question.category.title;
-          this.airdate = question.airdate.toString();
-          this.answer = question.answer;
-          console.log(question);
-        })
+        this.questionArr = questions;
+        console.log('HELLOOOOOOOOOO')
+
+          this.currentQuestion = this.questionArr[this.questionIdx];
       });
     }
+  }
+
+  onNext() {
+    this.questionIdx += 1 % this.questionArr.length;
+    this.currentQuestion = this.questionArr[this.questionIdx];
   }
 }

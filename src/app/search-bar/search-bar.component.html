@@ -1,34 +1,68 @@
-<div>
-    <mat-form-field class="example-full-width">
-        <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="searControl"
-            [matAutocomplete]="auto" [(ngModel)]="chosenCategory">
-        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-            <mat-option *ngFor="let option of options" [value]="option">
-                {{option.title}}
-            </mat-option>
-        </mat-autocomplete>
-    </mat-form-field>
+<div style="width: 100%;">
+    <mat-card class="main-div">
+        <mat-card-header>
+            <mat-card-title>
+                <div class="logo">
+                    <h1>JEOPARDY!</h1>
+                </div>
+            </mat-card-title>
+        </mat-card-header>
 
-    <mat-form-field>
-        <mat-label>For how much?</mat-label>
-        <mat-select [(ngModel)]="difficultyValue">
-            <mat-option *ngFor="let difficulty of difficulties" [value]="difficulty">
-            {{difficulty}}
-            </mat-option>
-        </mat-select>
-    </mat-form-field>
+        <mat-card-content>
+            <mat-grid-list cols="2" rowHeight="100px" class="background">
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
 
-    <mat-form-field class="example-full-width">
-            <input matInput [matDatepicker]="min_picker" placeholder="Choose a min date" [(ngModel)]="minDate">
-            <mat-datepicker-toggle matSuffix [for]="min_picker"></mat-datepicker-toggle>
-            <mat-datepicker #min_picker></mat-datepicker>
-    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <input type="text" placeholder="Pick one" aria-label="Number" matInput
+                            [formControl]="searControl" [matAutocomplete]="auto" [(ngModel)]="chosenCategory">
+                        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+                            <mat-option *ngFor="let option of options" [value]="option">
+                                {{option.title}}
+                            </mat-option>
+                        </mat-autocomplete>
+                    </mat-form-field>
+                </mat-grid-tile>
 
-    <mat-form-field class="example-full-width">
-            <input matInput [matDatepicker]="max_picker" placeholder="Choose a max date" [(ngModel)]="maxDate">
-            <mat-datepicker-toggle matSuffix [for]="max_picker"></mat-datepicker-toggle>
-            <mat-datepicker #max_picker></mat-datepicker>
-    </mat-form-field>
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
 
-    <button mat-button (click)="onSubmit()">Click the fuckkkk out of me</button>
+                    <mat-form-field>
+                        <mat-label>For how much?</mat-label>
+                        <mat-select [(ngModel)]="difficultyValue">
+                            <mat-option *ngFor="let difficulty of difficulties" [value]="difficulty">
+                                {{difficulty}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+
+                    <mat-form-field class="example-full-width">
+                        <input matInput [matDatepicker]="min_picker" placeholder="Choose a min date"
+                            [(ngModel)]="minDate">
+                        <mat-datepicker-toggle matSuffix [for]="min_picker"></mat-datepicker-toggle>
+                        <mat-datepicker #min_picker></mat-datepicker>
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+
+                    <mat-form-field class="example-full-width">
+                        <input matInput [matDatepicker]="max_picker" placeholder="Choose a max date"
+                            style="color: antiquewhite" [(ngModel)]="maxDate">
+                        <mat-datepicker-toggle matSuffix [for]="max_picker"></mat-datepicker-toggle>
+                        <mat-datepicker #max_picker></mat-datepicker>
+                    </mat-form-field>
+                </mat-grid-tile>
+            </mat-grid-list>
+
+        </mat-card-content>
+
+        <mat-card-actions style="text-align: center">
+            <button mat-raised-button color="basic" (click)="onSubmit()">
+                Find Questions!
+            </button>
+        </mat-card-actions>
+
+    </mat-card>
 </div>
