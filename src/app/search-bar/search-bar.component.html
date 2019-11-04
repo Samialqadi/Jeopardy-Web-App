@@ -1,18 +1,13 @@
 <div class="test">
+        <div class="logo">
+            <h1>JEOPARDY!</h1>
+        </div>
     <mat-card class="main-div">
-        <mat-card-header>
-            <mat-card-title>
-                <div class="logo">
-                    <h1>JEOPARDY!</h1>
-                </div>
-            </mat-card-title>
-        </mat-card-header>
-
         <mat-card-content>
-            <mat-grid-list cols="2" rowHeight="100px" class="background">
+            <mat-grid-list cols="2" rowHeight="100px" class="background" style="margin-right: 1.25vw">
                 <mat-grid-tile [colspan]="1" [rowspan]="1">
-                    <mat-form-field class="example-full-width">
-                        <input type="text" placeholder="Pick one" aria-label="Number" matInput
+                    <mat-form-field class="form-field">
+                        <input type="text" placeholder="Category? (Optional)" aria-label="Number" matInput
                             [formControl]="searControl" [matAutocomplete]="auto" [(ngModel)]="chosenCategory">
                         <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
                             <mat-option *ngFor="let option of options" [value]="option">
@@ -22,9 +17,9 @@
                     </mat-form-field>
                 </mat-grid-tile>
 
-                <mat-grid-tile [colspan]="1" [rowspan]="1">
-                    <mat-form-field>
-                        <mat-label>For how much?</mat-label>
+                <mat-grid-tile [colspan]="1" [rowspan]="1" style="margin-left: 1.25vw">
+                    <mat-form-field class="form-field">
+                        <mat-label>For how much? (Optional)</mat-label>
                         <mat-select [(ngModel)]="difficultyValue">
                             <mat-option *ngFor="let difficulty of difficulties" [value]="difficulty">
                                 {{difficulty}}
@@ -33,18 +28,18 @@
                     </mat-form-field>
                 </mat-grid-tile>
 
-                <mat-grid-tile [colspan]="1" [rowspan]="1">
-                    <mat-form-field class="example-full-width">
-                        <input matInput [matDatepicker]="min_picker" placeholder="Choose a min date"
+                <mat-grid-tile [colspan]="1" [rowspan]="1" style="margin-right: 1.25vw">
+                    <mat-form-field class="form-field">
+                        <input matInput [matDatepicker]="min_picker" placeholder="Min Air Date (Optional)"
                             [(ngModel)]="minDate">
                         <mat-datepicker-toggle matSuffix [for]="min_picker"></mat-datepicker-toggle>
                         <mat-datepicker #min_picker></mat-datepicker>
                     </mat-form-field>
                 </mat-grid-tile>
 
-                <mat-grid-tile [colspan]="1" [rowspan]="1">
-                    <mat-form-field class="example-full-width">
-                        <input matInput [matDatepicker]="max_picker" placeholder="Choose a max date"
+                <mat-grid-tile [colspan]="1" [rowspan]="1" style="margin-left: 1.25vw">
+                    <mat-form-field class="form-field">
+                        <input matInput [matDatepicker]="max_picker" placeholder="Max Air Date (Optional)"
                             style="color: antiquewhite" [(ngModel)]="maxDate">
                         <mat-datepicker-toggle matSuffix [for]="max_picker"></mat-datepicker-toggle>
                         <mat-datepicker #max_picker></mat-datepicker>

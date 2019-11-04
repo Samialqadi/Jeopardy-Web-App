@@ -18,3 +18,10 @@
     font-size: 3vh;
     width: 90vw;
 }
+
+// For Mobile
+@media only screen and (max-width: 415px) {
+    .form-field {
+        width: 42vw
+    }
+}

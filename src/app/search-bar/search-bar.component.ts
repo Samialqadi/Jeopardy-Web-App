@@ -25,12 +25,15 @@ export class SearchBarComponent implements OnInit {
   constructor(private clientService: ClientService, private router: Router) { }
 
   ngOnInit() {
-    this.clientService.getCategory(100, 100)
+    for (let i = 0; i < 15; i++) {
+      this.clientService.getCategory(i * 100, 100)
       .subscribe(categories => {
         categories.forEach(category => {
           this.options.push(category);
         })
       });
+    }
+
   }
 
   displayFn(category?: Category): string | undefined {
