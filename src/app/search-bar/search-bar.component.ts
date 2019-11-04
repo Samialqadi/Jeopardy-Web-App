@@ -38,23 +38,23 @@ export class SearchBarComponent implements OnInit {
   }
 
   onSubmit() {
-    let maybeMinDate = '';
-    let maybeMaxDate = '';
+    let maybeMinDate = '1950-01-01';
+    let maybeMaxDate = new Date().toISOString();
     let maybeChosenCategory = 0;
 
-    if (this.minDate !== undefined) {
+    if (this.minDate) {
       maybeMinDate = this.minDate.toISOString();
     }
-    if (this.maxDate !== undefined) {
+    if (this.maxDate) {
       maybeMaxDate = this.maxDate.toISOString();
     }
 
-    if (this.chosenCategory !== undefined) {
+    if (this.chosenCategory) {
       maybeChosenCategory = this.chosenCategory.id;
     }
 
     let navigationArr = ['/question', maybeChosenCategory, maybeMinDate,
-      maybeMinDate, this.difficultyValue || 0]
+      maybeMaxDate, this.difficultyValue || 0]
     this.router.navigate(navigationArr);
   }
 }

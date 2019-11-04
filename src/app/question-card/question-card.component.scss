@@ -1,27 +1,94 @@
-.question {
-    font-family: 'korinna';
-    color: white;
-    text-shadow: black
+// For Desktop
+@media only screen and (min-width: 415px) {
+    .question {
+        font-family: 'korinna';
+        color: white;
+        text-shadow: black;
+        text-align: center;
+        font-size: 5vh;
+    }
 }
 
-.difficulty {
-    font-family: 'swiss911';
-    color: #CCA572;
-    text-shadow: black
+// For Mobile
+@media only screen and (max-width: 415px) {
+    .question {
+        font-family: 'korinna';
+        color: white;
+        text-shadow: black;
+        text-align: center;
+        font-size: 2.5vh;
+    }
+}
+
+// For Desktop
+@media only screen and (min-width: 415px) {
+    .difficulty {
+        font-family: 'swiss911';
+        color: #CCA572;
+        text-shadow: black;
+        font-size: 5vh;
+    }
+}
+
+// For Mobile
+@media only screen and (max-width: 415px) {
+    .difficulty {
+        font-family: 'swiss911';
+        color: #CCA572;
+        text-shadow: black;
+        font-size: 2.5vh;
+    }
+}
+
+// For Desktop
+@media only screen and (min-width: 415px) {
+    .info {
+        font-family: 'korinna';
+        color: white;
+        text-shadow: black;
+        text-align: center;
+        font-size: 2.5vh;
+    }
+}
+
+// For Mobile
+@media only screen and (max-width: 415px) {
+    .info {
+        font-family: 'korinna';
+        color: white;
+        text-shadow: black;
+        text-align: center;
+        font-size: 1.6vh;
+    }
+}
+
+.logo {
+    font-family: 'jeopardy';
+    color: white;
+    text-shadow: black;
+    text-align: center;
+    font-size: 3vh;
+    background-color: #02059B;
+    border-color: transparent;
+    width: 90vw;
+    border: 0;
+    outline: 0;
 }
 
 .background {
     background-color: #02059B;
-    width: 100vh;
-    height:100vh;
-}
-
-.center {
-    width: 75%;
-    margin: 10px auto;
+    width: 90vw;
+    height:70vh;
 }
   
 .main-div {
-    height: 100vh;
-    width: 100vh;
+    height: 90vh;
+    width: 90vw;
+    background-color: #02059B;
+}
+
+.test {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }

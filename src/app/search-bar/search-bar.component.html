@@ -1,4 +1,4 @@
-<div style="width: 100%;">
+<div class="test">
     <mat-card class="main-div">
         <mat-card-header>
             <mat-card-title>
@@ -11,7 +11,6 @@
         <mat-card-content>
             <mat-grid-list cols="2" rowHeight="100px" class="background">
                 <mat-grid-tile [colspan]="1" [rowspan]="1">
-
                     <mat-form-field class="example-full-width">
                         <input type="text" placeholder="Pick one" aria-label="Number" matInput
                             [formControl]="searControl" [matAutocomplete]="auto" [(ngModel)]="chosenCategory">
@@ -24,7 +23,6 @@
                 </mat-grid-tile>
 
                 <mat-grid-tile [colspan]="1" [rowspan]="1">
-
                     <mat-form-field>
                         <mat-label>For how much?</mat-label>
                         <mat-select [(ngModel)]="difficultyValue">
@@ -36,7 +34,6 @@
                 </mat-grid-tile>
 
                 <mat-grid-tile [colspan]="1" [rowspan]="1">
-
                     <mat-form-field class="example-full-width">
                         <input matInput [matDatepicker]="min_picker" placeholder="Choose a min date"
                             [(ngModel)]="minDate">
@@ -46,7 +43,6 @@
                 </mat-grid-tile>
 
                 <mat-grid-tile [colspan]="1" [rowspan]="1">
-
                     <mat-form-field class="example-full-width">
                         <input matInput [matDatepicker]="max_picker" placeholder="Choose a max date"
                             style="color: antiquewhite" [(ngModel)]="maxDate">

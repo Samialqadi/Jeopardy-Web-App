@@ -1,33 +1,48 @@
-<mat-card class="main-div">
-    <mat-grid-list cols="4" rowHeight="100px" class="background">
-        <mat-grid-tile 
-            [colspan]="3"
-            [rowspan]="2"
-            style="border-bottom: 2px solid white;">
-            <div class="question" *ngIf='currentQuestion !== undefined'>
-                {{ currentQuestion.question }}
-            </div>
-        </mat-grid-tile>
-        <mat-grid-tile
-            [colspan]="1"
-            [rowspan]="1"
-            style="border-left: 2px solid white;border-bottom: 2px solid white;">
-            <div class="question" *ngIf='currentQuestion !== undefined'>
-                {{ 'Category: ' + currentQuestion.category.title }}
-                {{ 'Airdate: ' + currentQuestion.airdate.toString() }}
-                {{ 'Answer: ' + currentQuestion.answer }}
-            </div>
-        </mat-grid-tile>
-        <mat-grid-tile
-            [colspan]="1"
-            [rowspan]="1"
-            style="border-left: 2px solid white;border-bottom: 2px solid white;">
-            <div class="difficulty" *ngIf='currentQuestion !== undefined'>
-                {{ '$' + currentQuestion.value }}
-            </div>
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="4" [rowspan]='1'>
-            <button (click)="onNext()" mat-raised-button color="primary">Next Question</button>
-        </mat-grid-tile>
-    </mat-grid-list>
-</mat-card>
+<div class="test">
+    <button (click)="onLogo()" class="logo">
+        <h1>JEOPARDY!</h1>
+    </button>
+    <mat-card class="main-div">
+            <mat-grid-list cols="4" rowHeight="fit" class="background">
+                <mat-grid-tile 
+                    [colspan]="3"
+                    [rowspan]="2"
+                    style="border-bottom: 2px solid white;">
+                    <div class="question" *ngIf='currentQuestion !== undefined'>
+                        <h3>
+                            {{ currentQuestion.question }}
+                        </h3>
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile
+                    [colspan]="1"
+                    [rowspan]="1"
+                    style="border-left: 2px solid white;border-bottom: 2px solid white;">
+                    <div class="info" *ngIf='currentQuestion !== undefined'>
+                        <h5>
+                            {{ 'Category: ' + currentQuestion.category.title }}
+                        </h5>
+                        <h5>
+                            {{ 'Airdate: ' + currentQuestion.airdate.toString().split('T')[0] }}
+                        </h5>
+                        <h5>
+                            {{ 'Answer: ' + currentQuestion.answer }}
+                        </h5>
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile
+                    [colspan]="1"
+                    [rowspan]="1"
+                    style="border-left: 2px solid white;border-bottom: 2px solid white;">
+                    <div class="difficulty" *ngIf='currentQuestion !== undefined'>
+                        <h1>
+                            {{ '$' + currentQuestion.value }}
+                        </h1>
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="4" [rowspan]='1'>
+                    <button (click)="onNext()" mat-raised-button color="primary">Next Question</button>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </mat-card>
+</div>

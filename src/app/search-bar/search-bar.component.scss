@@ -1,7 +1,13 @@
 .main-div {
-    height: 100vh;
-    width: 100vh;
+    height: 90vh;
+    width: 90vw;
     background-color: #02059B;
+}
+
+.test {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .logo {
@@ -9,5 +15,6 @@
     color: white;
     text-shadow: black;
     text-align: center;
-    width: 100vh;
+    font-size: 3vh;
+    width: 90vw;
 }
